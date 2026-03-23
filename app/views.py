@@ -1,6 +1,9 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.views import View
+from django.contrib import messages
+from .forms import LivroForm
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -40,6 +43,13 @@ class GenerosView(View):
     def get(self, request, *args, **kwargs):
         generos = Genero.objects.all()
         return render(request, 'genero.html', {'generos': generos})
+    
+class DeleteLivroView(View):
+    def get(self, request, id, *args, **kwargs):
+        livro = Livro.objects.get(id=id)
+        livro.delete()
+        messages.success(request, 'Livro excluído com sucesso!') # Success message
+        return redirect('livros')
     
 class EditarLivroView(View):
     template_name = 'editar_livro.html'

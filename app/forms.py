@@ -1,3 +1,7 @@
+
+from django import forms
+from .models import Livro
+
 class LivroForm(forms.ModelForm):
     class Meta:
         model = Livro
@@ -12,7 +16,7 @@ class LivroForm(forms.ModelForm):
             'editora',
             'genero',
             'preco',
-            'data_pub',
+            'data_hub',
             'status',
             Submit('submit', 'Salvar')
         )

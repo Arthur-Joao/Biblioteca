@@ -13,11 +13,11 @@ urlpatterns = [
     path('editor/', EditorasView.as_view(), name='editora'),
     path('leitor/', LeitoresView.as_view(), name='leitor'),
     path('genero/', GenerosView.as_view(), name='genero'),
+    path('delete/<int:id>/', DeleteLivroView.as_view(), name='delete'),
+    path('editar/<int:id>', EditarLivroView.as_view(), name='editar'),
 ]
 
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from app.views import *
-
-path('editar/<int:id>', EditarLivroView.as_view(), name='editar'),
