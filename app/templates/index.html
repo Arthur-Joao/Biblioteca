@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,10 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <a class="navbar-brand" href="/">Biblioteca</a>
-        <button class="navbar-toggler" type="button"
-data-toggle="collapse" data-target="#navbarNav"
-aria-controls="navbarNav" aria-expanded="false"
-aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -66,8 +62,9 @@ aria-label="Toggle navigation">
             <p class="lead">Seja Bem Vindo(A)</p>
         </div>
     </div>
+
     <div class="container mt-5">
-    <h2 class="mb-4">Tabela de Livros</h2>
+        <h2 class="mb-4">Tabela de Livros</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -78,8 +75,6 @@ aria-label="Toggle navigation">
                     <th scope="col">Preço</th>
                     <th scope="col">Data Publicação</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,30 +83,19 @@ aria-label="Toggle navigation">
                     <td>{{ livros.nome }}</td>
                     <td>{{ livros.autor }}</td>
                     <td>{{ livros.editora }}</td>
-                    <td>
-                        {% for genero in livros.genero.all %}
-                        {{ genero.nome }}{% if not forloop.last %},
-                        {% endif %}
-                        {% endfor %}
-                    </td>
+                    <td>{{ livros.genero }}</td>
                     <td>{{ livros.preco }}</td>
                     <td>{{ livros.data_hub }}</td>
                     <td>{{ livros.status }}</td>
-                    <td><a href="editar_livro.html" class="btn btn-warning">Editar</a></td>
-                    <td><a href="{% url 'delete' livro.id %}" class="btn btn-danger">Excluir</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
-    </table>
+        </table>
     </div>
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-    <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-
-    <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
