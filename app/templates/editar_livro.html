@@ -14,9 +14,9 @@
     <p>Nome: {{ livro.nome }}</p>
     <p>Autor: {{ livro.autor }}</p>
     <p>Editora: {{ livro.editora }}</p>
-    <p>Gênero: {% for genero in livro.genero.all %}{{genero.nome }}{% if not forloop.last %}, {% endif %}{% endfor%}</p>
+    <p>Gênero: {{ livro.genero }}</p>
     <p>Preço: R$ {{ livro.preco }}</p>
-    <p>Data de Publicação: {{ livro.data_plub }}</p>
+    <p>Data de Publicação: {{ livro.data_hub }}</p>
     <p>Status: {{ livro.status }}</p>
     <h3 class="mt-4">Editar Livro</h3>
     {% if messages %}
